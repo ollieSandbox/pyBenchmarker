@@ -27,11 +27,22 @@ Or something to that effect. Check "example_benchmarker.py" for a better example
 Now you've set up a new class, just instantiate and call.
 
 ```
+#Pass iteration count
 bm = SomeBenchMark(1000)
 bm.benchmark()
 ```
 
 If you need additional instance properties just replace the __init__ and make sure to pass an iterations count to super().
+
+**example_benchmarker.py"** has additional init parameters for the length of each iteration's data and the range of values to be randomly generated.
+
+```
+#Iteration count, iteration list length and upper limit for random ints.
+bm = SomeBenchMark(1000, 100, 100)
+bm.benchmark()
+```
+
+
 
 **General notes**:
 
