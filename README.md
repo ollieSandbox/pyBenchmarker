@@ -1,11 +1,6 @@
 # pyBenchmarker
 Generic benchmarking class. Simple and quick benchmarker creation. Support inline input data modifications (see "lazy" section)
 
-Yeah, after 12 years of never writing README.md I'm not doing
-it now. Best of luck!
-
-Ok, turns out the README is important to Git General use as follows:
-
 This class is set up to figure out what methods the user wants to benchmark and runs benchmark test for each. Straightforward extension, just extned the base class, add a "generateData" method and any methods you want to benchmark.
 
 Eg.
@@ -25,23 +20,33 @@ class SomeBenchMark(BenchMarkBase):
         return False
     return True
 ```
-
 Or something to that effect. Check "example_benchmarker.py" for a better example
 
-General notes:
+**Getting it running**:
+
+Now you've set up a new class, just instantiate and call.
+
+```
+bm = SomeBenchMark(1000)
+bm.benchmark()
+```
+
+If you need additional instance properties just replace the __init__ and make sure to pass an iterations count to super().
+
+**General notes**:
 
 - If you don't want a method to be assessed or want to extend the general boilerplate functionality, prepend "BM" to function names.
 - If you're going to modify the input data in the test inlcude "lazy" in the name. This will force a deep clone of the data.
 
-Lazy aka, safe inputs:
+**Lazy aka, safe inputs**:
 
 Some methods such as "example_benchmarker.py"'s lazySubscripted and lazyEnumerate methods manipulate the input data. Unless it's primatives or immutable properties in a class, this would break the test data. Prevent this by including "lazy" in the method name to force a deep clone. Cloning is not by default prepartion performance. Cloning doesn't affect benchmark times.
 
-Disclaimer:
+**Disclaimer**:
 
 Just wrote this for a laugh. If there's something wrong let me know and I'll sort it.
 
-Fun extra:
+**Fun extra**:
 
 Simple Print prettifier for hash to table and basic string padding. Nothing fancy but I find it useful.
 
