@@ -3,6 +3,7 @@ Generic benchmarking class. Simple and quick benchmarker creation. Support inlin
 
 This class is set up to figure out what methods the user wants to benchmark and runs benchmark test for each. Straightforward extension, just extned the base class, add a "generateData" method and any methods you want to benchmark.
 
+
 Eg.
 
 ```
@@ -53,7 +54,7 @@ bm = SomeBenchMark(1000, 100, 100)
 bm.benchmark()
 ```
 
-
+![Example](https://imgur.com/a/UJDnf9d)
 
 **General notes**:
 
