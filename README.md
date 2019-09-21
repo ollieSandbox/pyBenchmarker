@@ -7,13 +7,24 @@ Eg.
 
 ```
 class SomeBenchMark(BenchMarkBase):
+  ##
+  # Abstract method must be overwritten at some point.
+  #
+  # output: Anything with a __len__ method defined
+  ##
   def generateData(self):
     return[list(x) for x in range(self.iterations)]
+   ##
+   # Random example benchmark method. Will be collected by the preprocessing
+   ##
   def allItemsAreOne(self, inputData):
     for x in inputData:
       if x is not 1:
         return False
     return True
+   ##
+   # Another random example benchmark method. Will be collected by the preprocessing
+   ##
   def allItemsAreModTwo(self, inputData):
     for x in inputData:
       if 2 + x % 2 is not 0:
