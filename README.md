@@ -53,8 +53,8 @@ If you need additional instance properties just replace the __init__ and make su
 bm = SomeBenchMark(1000, 100, 100)
 bm.benchmark()
 ```
+<img src='https://imgur.com/a/UJDnf9d'>
 
-![Example](https://imgur.com/a/UJDnf9d)
 
 **General notes**:
 
