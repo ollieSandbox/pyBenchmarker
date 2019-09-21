@@ -9,6 +9,8 @@ Ok, turns out the README is important to Git General use as follows:
 This class is set up to figure out what methods the user wants to benchmark and runs benchmark test for each. Straightforward extension, just extned the base class, add a "generateData" method and any methods you want to benchmark.
 
 Eg.
+
+```
 class SomeBenchMark(BenchMarkBase):
   def generateData(self):
     return[list(x) for x in range(self.iterations)]
@@ -22,6 +24,7 @@ class SomeBenchMark(BenchMarkBase):
       if 2 + x % 2 is not 0:
         return False
     return True
+```
 
 Or something to that effect. Check "example_benchmarker.py" for a better example
 
