@@ -38,12 +38,12 @@ class ListDupRemoveBenchMark(BenchMarkerBase):
 	##
 	# Lambda type loop and check
 	##
-	def loop(self, input):
+	def enumerate(self, input):
 		return [v for i, v in enumerate(input) if i == 0 or v != input[i-1]]
 	##
 	# Enumerate iteration
 	##
-	def enumerate(self, input):
+	def loop(self, input):
 		previous_value = None
 		new_lst = []
 		for elem in input:
